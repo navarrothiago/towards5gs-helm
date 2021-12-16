@@ -45,6 +45,7 @@ global:
     cidr: 29
     gatewayIP: 10.100.50.254
     excludeIP: 10.100.50.254
+  gke: false
 
 initcontainers:
   curl:

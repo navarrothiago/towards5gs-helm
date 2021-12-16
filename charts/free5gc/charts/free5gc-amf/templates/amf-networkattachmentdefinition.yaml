@@ -25,13 +25,15 @@ spec:
           "master": {{ .Values.global.n2network.masterIf | quote }},
           "mode": "bridge",
           "ipam": {
-            "type": "static",
+            "type": "static"
+            {{- if not $.Values.global.gke }},
             "routes": [
               {
                 "dst": "0.0.0.0/0",
                 "gw": "{{ .Values.global.n2network.gatewayIP }}"
               }
             ] 
+            {{- end }}
           }
         }, {
           "capabilities": { "mac": true },
