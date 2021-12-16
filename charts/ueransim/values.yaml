@@ -31,6 +31,7 @@ global:
     cidr: 29
     gatewayIP: 10.100.50.238
     excludeIP: 10.100.50.238
+  gke: false
 
 
 projectName: ueransim
