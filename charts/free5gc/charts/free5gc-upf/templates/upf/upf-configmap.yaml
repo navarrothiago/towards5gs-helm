@@ -28,7 +28,7 @@ data:
       {{- toYaml .configuration.configuration | nindent 6 }}
     
       pfcp:
-        - addr: {{ .n4if.ipAddress }}
+        - addr: {{ $.Values.global.upf.ipAddress }}
     
       gtpu:
         - addr: {{ .n3if.ipAddress }}

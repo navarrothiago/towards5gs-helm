@@ -28,6 +28,7 @@ global:
   sbi:
     scheme: http
   amf:
+    ipAddress: 10.244.166.249
     n2if:  # NGAP
       ipAddress: 10.100.50.249
     service:

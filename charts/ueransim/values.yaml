@@ -32,6 +32,20 @@ global:
     gatewayIP: 10.100.50.238
     excludeIP: 10.100.50.238
   gke: false
+  gnb:
+    ipAddress: 10.244.166.250
+  n2if:  # NGAP
+    ipAddress: 10.100.50.250
+  n3if:  # GTP-U
+    ipAddress: 10.100.50.236
+  amf:
+    ipAddress: 10.244.166.249
+    n2if:  # NGAP
+      ipAddress: 10.100.50.249
+      port: 38412
+    service:
+      ngap:
+        enabled: false  # if true set gnb.amf.n2if.ipAddress to the name of AMF NGAP service or the IP of the cluster hosting the AMF
 
 
 projectName: ueransim
@@ -54,12 +68,14 @@ gnb:
     port: 4997
     protocol: UDP
 
+  ipAddress: 10.244.166.250
   n2if:  # NGAP
     ipAddress: 10.100.50.250
   n3if:  # GTP-U
     ipAddress: 10.100.50.236
 
   amf:
+    ipAddress: 10.244.166.249
     n2if:  # NGAP
       ipAddress: 10.100.50.249
       port: 38412

@@ -32,6 +32,7 @@ spec:
     metadata:
       annotations:
         {{- include "free5gc-smf.smfAnnotations" $ | nindent 8 }}
+        "cni.projectcalico.org/ipAddrs": "[\"{{ $.Values.global.smf.ipAddress }}\"]"
         k8s.v1.cni.cncf.io/networks: '[
             { "name": "{{ $.Values.global.n4network.name }}-{{ .name }}",
               "interface": "n4",
