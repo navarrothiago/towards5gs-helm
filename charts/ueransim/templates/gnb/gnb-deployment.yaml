@@ -35,6 +35,7 @@ spec:
         component: {{ .name }}
       annotations:
         {{- include "ueransim.gnbAnnotations" $ | nindent 8 }}
+        "cni.projectcalico.org/ipAddrs": "[\"{{ $.Values.global.gnb.ipAddress }}\"]"
         k8s.v1.cni.cncf.io/networks: '[
         {{- if not .amf.service.ngap.enabled }}
             { "name": "{{ $.Values.global.n2network.name }}-{{ include "ueransim.fullname" $ }}",
