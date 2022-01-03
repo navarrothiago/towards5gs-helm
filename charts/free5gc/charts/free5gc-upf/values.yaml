@@ -100,9 +100,9 @@ upf:
     timeoutSeconds: 10
     failureThreshold: 3
     successThreshold: 1
-  nodeSelector: 
-    kubernetes.io/hostname: node1
-  # nodeSelector: {}
+  nodeSelector: {}
+  # nodeSelector: 
+  #   kubernetes.io/hostname: node1
   tolerations: []
   affinity: {}
   autoscaling:
